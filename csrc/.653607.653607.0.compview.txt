@@ -1,0 +1,8 @@
+Command exited with non-zero status 255
+{"vcs1":{"timestamp_begin":1792840095.687126916, "rt":0.41, "ut":0.04, "st":0.02}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1792840095.470647370}
+{"VCS_COMP_START_TIME": 1792840095.470647370}
+{"VCS_COMP_END_TIME": 1792840096.153692839}
+{"VCS_USER_OPTIONS": "-full64 modular_adder.v modular_multiplier.v modular_subtractor.v moduler_integer.v -top tb_multiplier"}
+{"kdb": {"elabcom_name":"<Elabcom>", "log_dir":"simv.daidir/elabcomLog"}}
+{"vcs1": {"peak_mem": 236272}}

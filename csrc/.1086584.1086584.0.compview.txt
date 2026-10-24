@@ -1,0 +1,11 @@
+{"vcs1":{"timestamp_begin":1792866492.015091942, "rt":0.61, "ut":0.16, "st":0.15}}
+{"vcselab":{"timestamp_begin":1792866492.680341322, "rt":0.53, "ut":0.14, "st":0.06}}
+{"link":{"timestamp_begin":1792866493.256044847, "rt":0.14, "ut":0.08, "st":0.06}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1792866491.724062782}
+{"VCS_COMP_START_TIME": 1792866491.724062782}
+{"VCS_COMP_END_TIME": 1792866493.986732327}
+{"elabcom":{"timestamp_begin":1792866492.454596658,"rt":0.04, "ut":0.00, "st":0.03}}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -kdb -debug_access+all butterfly_unit.v package.v -R"}
+{"kdb": {"elabcom_name":"<Kdbresolver>", "log_dir":"simv.daidir/kdbresolverLog"}}
+{"vcs1": {"peak_mem": 425784}}
+{"vcselab": {"peak_mem": 174424}}

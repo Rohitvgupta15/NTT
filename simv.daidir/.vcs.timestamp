@@ -1,0 +1,140 @@
+0
+35
++itf+/usr/cad/synopsys/vcs/2025.06/linux64/lib/vcsdp_lite.tab
++vcsd1
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/usr/cad/synopsys/vcs/2025.06/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/usr/cad/synopsys/vcs/2025.06/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/pli.a -ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/2025.06/include
+-Mxllcflags=
+-P
+-Xhdlxmropt
+-Xufe=2steps
+-Xvcs_run_simv=1
+-debug_access+all
+-fsdb
+-full64
+-gen_obj
+-kdb
+-picarchive
+-sverilog
+/usr/cad/synopsys/vcs/2025.06/linux64/bin/vcs1fe
+/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/verdi.tab
+butterfly_unit.v
+package.v
+82
+XDG_SESSION_ID=37291
+XDG_RUNTIME_DIR=/run/user/1138
+VSCODE_NONCE=7cd3646c-9b50-46a9-8dfe-1e51c0d4b073
+VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-54c7cab1-369c-42fa-bcf5-dc5dd49b10e1.sock
+VSCODE_GIT_IPC_HANDLE=/run/user/1138/vscode-git-c09c658610.sock
+VSCODE_GIT_ASKPASS_NODE=/home/rohit/.vscode-server/cli/servers/Stable-e646868227c3e3a9e3f24277c8c7220be42c0be7/server/node
+VSCODE_GIT_ASKPASS_MAIN=/home/rohit/.vscode-server/cli/servers/Stable-e646868227c3e3a9e3f24277c8c7220be42c0be7/server/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+VMR_MODE_FLAG=64
+VERDI_HOME=/usr/cad/synopsys/verdi/2025.06/
+VENDOR=unknown
+VCS_STATIC_HOME=/usr/cad/synopsys/vcs/2025.06//vcfca
+VCS_PYTHON3=/usr/cad/synopsys/vcs/2025.06//linux64/bin/Python3/bin/python3
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_INTERNAL_CONVERTEDLIBS=
+VCS_HOME=/usr/cad/synopsys/vcs/2025.06/
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_CC=gcc
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+UNAME=/bin/uname
+TOOL_HOME=/usr/cad/synopsys/vcs/2025.06/linux64
+TERM_PROGRAM_VERSION=1.143.1
+TERM_PROGRAM=vscode
+S_COLORS=auto
+SYN_MAN_DIR=/usr/cad/synopsys/vcs/2025.06//doc/man
+SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
+SSH_CONNECTION=192.168.101.33 53991 140.116.245.89 22
+SSH_CLIENT=192.168.101.33 53991 22
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
+SNPS_VCS_VHDL_WRAPPER_KDB=1
+SNPS_VCS_PYTHON3=/usr/cad/synopsys/vcs/2025.06//linux64/bin/Python3/bin/python3
+SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2025.06//linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SHLIB_PATH=/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/:
+SELINUX_USE_CURRENT_RANGE=
+SELINUX_ROLE_REQUESTED=
+SELINUX_LEVEL_REQUESTED=
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+OVA_UUM=0
+OSTYPE=linux
+MODULES_USE_COMPAT_VERSION=0
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+MODULESHOME=/usr/share/Modules
+MODULEPATH_modshare=/usr/share/modulefiles:1:/usr/share/Modules/modulefiles:1:/etc/modulefiles:1
+MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+LOADEDMODULES=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+HOSTTYPE=x86_64-linux
+GROUP=lab
+GIT_ASKPASS=/home/rohit/.vscode-server/cli/servers/Stable-e646868227c3e3a9e3f24277c8c7220be42c0be7/server/extensions/git/dist/askpass.sh
+DVT_VSCODE_WORKSPACES_HOME=/home/rohit/.dvt/vscode/workspaces
+DVT_VSCODE_HOME=/home/rohit/.dvt/vscode
+DVT_USER_DIR=/home/rohit/.dvt
+DVT_SIMLOG_PROCESSOR=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/platform/linux-amd64/bin/dvt_simlog_processor.sh
+DVT_SCRIPTS_HOME=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/platform/linux-amd64/bin
+DVT_RUNTIME_REGISTRY_LOCATION=/home/rohit/.dvt/vscode/runtime
+DVT_RUNTIME_LATEST_REGISTRY_ENTRY_LOCATION=/home/rohit/.dvt/vscode/runtime/latest.pid
+DVT_PYTHON_BIN=/home/rohit/.dvt/python_runtimes/866a2c6f7d9d5154523db2887c55fb59/python/bin/python3.10
+DVT_PREDEFINED_PROJECTS_TARGET=/home/rohit/dvt_predefined_projects_target
+DVT_PREDEFINED_PROJECTS=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/common/predefined_projects
+DVT_MCP_SH=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/platform/linux-amd64/bin/dvt_mcp.sh
+DVT_LS_SH=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/platform/linux-amd64/bin/dvt_ls.sh
+DVT_LS_REGISTRY_DIR=/home/rohit/.dvt/ls/registry
+DVT_LS_LOGS_DIR=/home/rohit/.dvt/ls/logs
+DVT_LIBS=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/common/libs
+DVT_JAVA_HOME=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/platform/linux-amd64/jdk
+DVT_HOME=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home
+DVT_CODE_SH=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/platform/linux-amd64/bin/dvt_code.sh
+DVT_CODE_INTEGRATED_TERMINAL=true
+DVT_CODE_BIN=/home/rohit/.vscode-server/cli/servers/Stable-e646868227c3e3a9e3f24277c8c7220be42c0be7/server/bin/remote-cli/code
+DVT_BATCH_HOME=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/common/batch
+DEFAULT_PREDEFINED_PROJECTS=/home/rohit/.vscode-server/extensions/amiq.dvt-26.1.21-linux-x64/dvt_home/common/predefined_projects
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1138/bus
+COLORTERM=truecolor
+CLAUDE_CODE_SSE_PORT=60357
+0
+0
+10
+1792866488 modular_multiplier.v
+1792865925 modular_reduction.v
+1792865925 modular_integer.v
+1792866041 modular_subtractor.v
+1792865925 modular_adder.v
+1748765798 /usr/cad/synopsys/vcs/2025.06/linux64/packages/snps_msv_nettype_pkg/AN.DB
+1792866252 package.v
+1792867061 butterfly_unit.v
+1748749539 /usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/verdi.tab
+1748747165 /usr/cad/synopsys/vcs/2025.06/linux64/lib/vcsdp_lite.tab
+4
+1748749132 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvirsim.so
+1748748097 /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so
+1748748087 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so
+1748748085 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
+1792867067 simv.daidir
+-1 partitionlib
