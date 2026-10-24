@@ -33,8 +33,8 @@
 -sverilog
 /usr/cad/synopsys/vcs/2025.06/linux64/bin/vcs1fe
 /usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/verdi.tab
-butterfly_unit.v
 package.v
+butterfly_unit.v
 82
 XDG_SESSION_ID=37291
 XDG_RUNTIME_DIR=/run/user/1138
@@ -127,8 +127,8 @@ CLAUDE_CODE_SSE_PORT=60357
 1792866041 modular_subtractor.v
 1792865925 modular_adder.v
 1748765798 /usr/cad/synopsys/vcs/2025.06/linux64/packages/snps_msv_nettype_pkg/AN.DB
-1792866252 package.v
-1792867061 butterfly_unit.v
+1792870168 butterfly_unit.v
+1792868091 package.v
 1748749539 /usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/verdi.tab
 1748747165 /usr/cad/synopsys/vcs/2025.06/linux64/lib/vcsdp_lite.tab
 4
@@ -136,5 +136,5 @@ CLAUDE_CODE_SSE_PORT=60357
 1748748097 /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so
 1748748087 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so
 1748748085 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
-1792867067 simv.daidir
+1792870186 simv.daidir
 -1 partitionlib

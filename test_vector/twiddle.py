@@ -22,4 +22,4 @@ def generate_twiddle_hex(N, q, omega, filename="twiddle.hex", montgomery=False, 
             f.write(f"{val:X}\n")
 
 # Example configuration for N=8, q=17, omega=2:
-# generate_twiddle_hex(N=8, q=17, omega=2, filename="twiddle.hex")
+# generate_twiddle_hex(N=8, q=17, omega=2, filename="twiddle.hex")echo $LD_LIBRARY_PATH
