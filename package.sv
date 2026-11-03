@@ -1,0 +1,5 @@
+`include "modular_adder.v"
+`include "modular_subtractor.v"
+`include "modular_multiplier.v"
+`include "modular_reduction.v"
+`include "modular_integer.v"
