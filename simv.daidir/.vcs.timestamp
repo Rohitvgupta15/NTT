@@ -34,13 +34,13 @@
 /usr/cad/synopsys/vcs/2025.06/linux64/bin/vcs1fe
 /usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/verdi.tab
 package.sv
-butterfly_unit.v
+polynomial_mul.v
 61
 XDG_SESSION_ID=40940
 XDG_RUNTIME_DIR=/run/user/1138
-VSCODE_NONCE=c616b70f-6c43-4b41-ab30-d1476fcdb04a
-VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-6ea42e50-95b8-4962-ba21-8a42f3dd041c.sock
-VSCODE_GIT_IPC_HANDLE=/run/user/1138/vscode-git-df30ce1a22.sock
+VSCODE_NONCE=c4c8a94e-2920-449e-8e98-4154d0995f6e
+VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-04a06fbb-71da-4f7e-957d-17bc5eb7c1f7.sock
+VSCODE_GIT_IPC_HANDLE=/run/user/1138/vscode-git-3af6a11134.sock
 VSCODE_GIT_ASKPASS_NODE=/home/rohit/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
 VSCODE_GIT_ASKPASS_MAIN=/home/rohit/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/extensions/git/dist/askpass-main.js
 VSCODE_GIT_ASKPASS_EXTRA_ARGS=
@@ -94,20 +94,21 @@ HOSTTYPE=x86_64-linux
 GROUP=lab
 GIT_ASKPASS=/home/rohit/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/extensions/git/dist/askpass.sh
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1138/bus
-COPILOT_DEBUG_NONCE=c77519e5f4f8a1ed05172ef7dd0ea082
+COPILOT_DEBUG_NONCE=a45d7c673ea321127dab96051a03766e
 COLORTERM=truecolor
-CLAUDE_CODE_SSE_PORT=12433
+CLAUDE_CODE_SSE_PORT=30788
 0
 0
-10
+11
+1793727267 butterfly_unit.v
 1793718497 modular_integer.v
 1793718497 modular_reduction.v
 1793718978 modular_multiplier.v
 1793719661 modular_subtractor.v
 1793718497 modular_adder.v
 1748765798 /usr/cad/synopsys/vcs/2025.06/linux64/packages/snps_msv_nettype_pkg/AN.DB
-1793723358 butterfly_unit.v
-1793718675 package.sv
+1793728137 polynomial_mul.v
+1793727210 package.sv
 1748749539 /usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/verdi.tab
 1748747165 /usr/cad/synopsys/vcs/2025.06/linux64/lib/vcsdp_lite.tab
 4
@@ -115,5 +116,5 @@ CLAUDE_CODE_SSE_PORT=12433
 1748748097 /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so
 1748748087 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so
 1748748085 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
-1793723362 simv.daidir
+1793728143 simv.daidir
 -1 partitionlib

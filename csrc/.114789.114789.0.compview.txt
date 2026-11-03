@@ -1,0 +1,11 @@
+{"vcs1":{"timestamp_begin":1793728118.879730872, "rt":0.75, "ut":0.24, "st":0.17}}
+{"vcselab":{"timestamp_begin":1793728119.689957154, "rt":0.52, "ut":0.14, "st":0.05}}
+{"link":{"timestamp_begin":1793728120.250730724, "rt":0.15, "ut":0.10, "st":0.06}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1793728118.592133193}
+{"VCS_COMP_START_TIME": 1793728118.592133193}
+{"VCS_COMP_END_TIME": 1793728121.063332249}
+{"elabcom":{"timestamp_begin":1793728119.375763186,"rt":0.05, "ut":0.01, "st":0.03}}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -kdb -debug_access+all package.sv polynomial_mul.v -R"}
+{"kdb": {"elabcom_name":"<Kdbresolver>", "log_dir":"simv.daidir/kdbresolverLog"}}
+{"vcs1": {"peak_mem": 429040}}
+{"vcselab": {"peak_mem": 182836}}

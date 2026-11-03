@@ -1,7 +1,8 @@
-/home/rohit/NTT/NTT_11_3_11pm/butterfly_unit.v
-/home/rohit/NTT/NTT_11_3_11pm/modular_adder.v
-/home/rohit/NTT/NTT_11_3_11pm/modular_integer.v
-/home/rohit/NTT/NTT_11_3_11pm/modular_multiplier.v
-/home/rohit/NTT/NTT_11_3_11pm/modular_reduction.v
-/home/rohit/NTT/NTT_11_3_11pm/modular_subtractor.v
-/home/rohit/NTT/NTT_11_3_11pm/package.sv
+/home/rohit/NTT/NTT/butterfly_unit.v
+/home/rohit/NTT/NTT/modular_adder.v
+/home/rohit/NTT/NTT/modular_integer.v
+/home/rohit/NTT/NTT/modular_multiplier.v
+/home/rohit/NTT/NTT/modular_reduction.v
+/home/rohit/NTT/NTT/modular_subtractor.v
+/home/rohit/NTT/NTT/package.sv
+/home/rohit/NTT/NTT/polynomial_mul.v

@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1793728068.592801321, "rt":0.43, "ut":0.04, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1793728068.304967029}
+{"VCS_COMP_START_TIME": 1793728068.304967029}
+{"VCS_COMP_END_TIME": 1793728069.608997738}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -kdb -debug_access+all package.sv polynomial_mul.v -R"}
+{"kdb": {"elabcom_name":"<Kdbresolver>", "log_dir":"simv.daidir/kdbresolverLog"}}
