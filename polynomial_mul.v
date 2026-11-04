@@ -99,8 +99,8 @@ module tb_polynomial_mul;
     initial begin
         reset = 1;
         start = 0;
-        a0 = 32'd1; a1 = 32'd2; a2 = 32'd3; a3 = 32'd4;
-        b0 = 32'd5; b1 = 32'd6; b2 = 32'd7; b3 = 32'd8;
+        a0 = 32'd560; a1 = 32'd2624; a2 = 32'd6099; a3 = 32'd5678;
+        b0 = 32'd5257; b1 = 32'd4836; b2 = 32'd1995; b3 = 32'd1574;
 
         // Release reset, then give a one-clock start pulse aligned to the clock
         repeat (2) @(posedge clk);
