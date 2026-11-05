@@ -1,17 +1,17 @@
 module mod_sub
 #(
-    parameter WIDTH = 32
+    parameter WIDTH = 32,
+    parameter [WIDTH-1:0] Q = 32'd7681   // Modulus Q (odd prime)
 )
 (
     input  wire [WIDTH-1 : 0] a,
     input  wire [WIDTH-1 : 0] b,
-    input  wire [WIDTH-1 : 0] q,
     output wire [WIDTH-1 : 0] result
 );
 
     wire [WIDTH-1 : 0] temp_diff;
     
     assign temp_diff = a + ~b + 1;
-    assign result = (a < b) ? (temp_diff + q ) : temp_diff;
+    assign result = (a < b) ? (temp_diff + Q) : temp_diff;
 
 endmodule

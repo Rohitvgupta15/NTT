@@ -1,5 +1,6 @@
 module BFU #(
-    parameter WIDTH = 32
+    parameter WIDTH = 32,
+    parameter [WIDTH-1:0] Q = 32'd7681   // Modulus Q (odd prime)
 ) (
     input               clk,
     input             reset,
@@ -8,7 +9,6 @@ module BFU #(
     input [WIDTH - 1 : 0] B,
     input [WIDTH - 1 : 0] W,
     input [WIDTH - 1 : 0] W_inv,
-    input [WIDTH - 1 : 0] q,
     input             start,
 
     output reg [WIDTH - 1 : 0] U,
@@ -32,33 +32,33 @@ module BFU #(
 
 
     mod_mult #(
-        .WIDTH       (WIDTH)
+        .WIDTH       (WIDTH),
+        .Q           (Q)
     ) mul1 (
         .clk   (clk),
         .reset (reset),
         .start (start),
         .a     (B),
         .w     (W),
-        .q     (q),
         .result(modulo_ct),
         .done  (mul_done)
     );
 
     mod_add #(
-        .WIDTH       (WIDTH)
+        .WIDTH       (WIDTH),
+        .Q           (Q)
     ) add1 (
         .a     (A),
         .b     (modulo_ct),
-        .q     (q),
         .result(reg_u_ct)
     );
 
     mod_sub #(
-        .WIDTH       (WIDTH)
+        .WIDTH       (WIDTH),
+        .Q           (Q)
     ) sub1 (
         .a     (A),
         .b     (modulo_ct),
-        .q     (q),
         .result(reg_v_ct)
     );
 
@@ -67,20 +67,20 @@ module BFU #(
 //   V = (A - B) * W_inv mod q
 
     mod_add #(
-        .WIDTH       (WIDTH)
+        .WIDTH       (WIDTH),
+        .Q           (Q)
     ) add2 (
         .a     (A),
         .b     (B),
-        .q     (q),
         .result(gs_add)
     );
 
     mod_sub #(
-        .WIDTH       (WIDTH)
+        .WIDTH       (WIDTH),
+        .Q           (Q)
     ) sub2 (
         .a     (A),
         .b     (B),
-        .q     (q),
         .result(gs_sub)
     );
 
@@ -97,19 +97,19 @@ module BFU #(
     //     .done  ()
     // );
     mod_mult #(
-        .WIDTH       (WIDTH)
+        .WIDTH       (WIDTH),
+        .Q           (Q)
     ) mul3 (
         .clk   (clk),
         .reset (reset),
         .start (start),
         .a     (gs_sub),
         .w     (W_inv),
-        .q     (q),
         .result(reg_v_gs),
         .done  ()
     );
     
-    wire [WIDTH:0] gs_add_q = gs_add + q;
+    wire [WIDTH:0] gs_add_q = gs_add + Q;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin

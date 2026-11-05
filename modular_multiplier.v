@@ -2,14 +2,14 @@
 // Top-Level Modular Multiplier
 // ============================================================
 module mod_mult #(
-    parameter WIDTH = 32
+    parameter WIDTH = 32,
+    parameter [WIDTH-1:0] Q = 32'd7681   // Modulus Q (odd prime)
 )(
     input  wire                 clk,
     input  wire                 reset,
     input  wire                 start,
     input  wire [WIDTH-1:0]     a,
     input  wire [WIDTH-1:0]     w,
-    input  wire [WIDTH-1:0]     q,
     output wire [WIDTH-1:0]     result,
     output wire                 done
 );
@@ -37,13 +37,13 @@ module mod_mult #(
     );
 
     mod_red #(
-        .WIDTH (WIDTH)
+        .WIDTH (WIDTH),
+        .Q     (Q)
     ) m2 (
         .clk   (clk),
         .reset (reset),
         .start (start_delay[1]),   // Pulses high when mult_out is valid
         .c     (mult_out),
-        .q     (q),
         .res   (result),
         .done  (done)
     );

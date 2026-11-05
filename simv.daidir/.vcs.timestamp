@@ -28,13 +28,13 @@ simv
 package.sv
 polynomial_mul.v
 64
-XDG_SESSION_ID=41083
+XDG_SESSION_ID=41691
 XDG_RUNTIME_DIR=/run/user/1138
-VSCODE_NONCE=72a888e2-6782-4902-ac4b-c60c393a932e
-VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-deb3d512-3109-4785-bc14-1f9c1294db06.sock
+VSCODE_NONCE=03df7721-43e0-40a6-993c-e7ca4f7912f6
+VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-cebd064f-9f96-48fc-affb-4759fd66a8cd.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1138/vscode-git-3af6a11134.sock
-VSCODE_GIT_ASKPASS_NODE=/home/rohit/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
-VSCODE_GIT_ASKPASS_MAIN=/home/rohit/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_NODE=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/node
+VSCODE_GIT_ASKPASS_MAIN=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/extensions/git/dist/askpass-main.js
 VSCODE_GIT_ASKPASS_EXTRA_ARGS=
 VMR_MODE_FLAG=64
 VERDI_HOME=/usr/cad/synopsys/verdi/2025.06/
@@ -53,13 +53,13 @@ VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/usr/cad/synopsys/vcs/2025.06/linux64
-TERM_PROGRAM_VERSION=1.144.0
+TERM_PROGRAM_VERSION=1.145.0
 TERM_PROGRAM=vscode
 S_COLORS=auto
 SYN_MAN_DIR=/usr/cad/synopsys/vcs/2025.06//doc/man
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
-SSH_CONNECTION=192.168.101.54 64201 140.116.245.89 22
-SSH_CLIENT=192.168.101.54 64201 22
+SSH_CONNECTION=192.168.101.54 61610 140.116.245.89 22
+SSH_CLIENT=192.168.101.54 61610 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/usr/cad/synopsys/vcs/2025.06//linux64/bin/Python3/bin/python3
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2025.06//linux64/clang
@@ -87,27 +87,27 @@ LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 HOSTTYPE=x86_64-linux
 GROUP=lab
-GIT_ASKPASS=/home/rohit/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/extensions/git/dist/askpass.sh
+GIT_ASKPASS=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/extensions/git/dist/askpass.sh
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1138/bus
 COPILOT_DEBUG_NONCE=a45d7c673ea321127dab96051a03766e
 COLORTERM=truecolor
-CLAUDE_CODE_SSE_PORT=50222
+CLAUDE_CODE_SSE_PORT=54734
 0
 0
 9
-1793727267 butterfly_unit.v
+1793868068 butterfly_unit.v
 1793718497 modular_integer.v
-1793718497 modular_reduction.v
-1793718978 modular_multiplier.v
-1793719661 modular_subtractor.v
-1793718497 modular_adder.v
+1793868067 modular_reduction.v
+1793868068 modular_multiplier.v
+1793868068 modular_subtractor.v
+1793868068 modular_adder.v
 1748765798 /usr/cad/synopsys/vcs/2025.06/linux64/packages/snps_msv_nettype_pkg/AN.DB
-1793801430 polynomial_mul.v
+1793868068 polynomial_mul.v
 1793727210 package.sv
 4
 1748749132 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvirsim.so
 1748748097 /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so
 1748748087 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so
 1748748085 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
-1793801725 simv.daidir
+1793868165 simv.daidir
 -1 partitionlib
