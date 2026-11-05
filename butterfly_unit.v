@@ -1,133 +1,85 @@
 module BFU #(
     parameter WIDTH = 32,
-    parameter [WIDTH-1:0] Q = 32'd7681   // Modulus Q (odd prime)
+    parameter [WIDTH-1:0] Q = 32'd7681,  // Modulus Q (odd prime)
+    // Butterfly type (fixed at elaboration, only that datapath is built):
+    //   1 = NTT  (Cooley-Tukey):     U = A + W*B,      V = A - W*B
+    //   0 = INTT (Gentleman-Sande):  U = (A + B)/2,    V = (A - B)*W_inv
+    parameter OP = 1
 ) (
-    input               clk,
-    input             reset,
-    input                op, // 1 = NTT, 0 = INTT
-    input [WIDTH - 1 : 0] A,
-    input [WIDTH - 1 : 0] B,
-    input [WIDTH - 1 : 0] W,
-    input [WIDTH - 1 : 0] W_inv,
-    input             start,
+    input                      clk,
+    input                      reset,
+    input      [WIDTH - 1 : 0] A,
+    input      [WIDTH - 1 : 0] B,
+    input      [WIDTH - 1 : 0] W,       // NTT twiddle  (used when OP == 1)
+    input      [WIDTH - 1 : 0] W_inv,   // INTT twiddle (used when OP == 0)
+    input                      start,
 
     output reg [WIDTH - 1 : 0] U,
     output reg [WIDTH - 1 : 0] V,
-    output reg            done
+    output reg                 done
 );
 
+    wire [WIDTH - 1 : 0] u_next;
+    wire [WIDTH - 1 : 0] v_next;
+    wire                 mul_done;
 
-    wire  [WIDTH - 1 : 0] modulo_ct;
-    wire  [WIDTH - 1 : 0] reg_u_ct;
-    wire  [WIDTH - 1 : 0] reg_v_ct;
-    wire  [WIDTH - 1 : 0] reg_u_gs;
-    wire  [WIDTH - 1 : 0] reg_v_gs;
-    wire  [WIDTH - 1 : 0] gs_add;
-    wire  [WIDTH - 1 : 0] gs_sub;
-    wire  mul_done;
+    generate
+        if (OP == 1) begin : g_ct
+            // ---------------- Cooley-Tukey (NTT) ----------------
+            //   U = A + W*B mod q
+            //   V = A - W*B mod q
+            wire [WIDTH - 1 : 0] wb;
 
-//  using Cooley-Tukey (CT)
-//   U = A + W * B mod q
-//   V = A - W * B mod q
+            mod_mult #(.WIDTH(WIDTH), .Q(Q)) mul (
+                .clk   (clk),
+                .reset (reset),
+                .start (start),
+                .a     (B),
+                .w     (W),
+                .result(wb),
+                .done  (mul_done)
+            );
 
+            mod_add #(.WIDTH(WIDTH), .Q(Q)) add (.a(A), .b(wb), .result(u_next));
+            mod_sub #(.WIDTH(WIDTH), .Q(Q)) sub (.a(A), .b(wb), .result(v_next));
 
-    mod_mult #(
-        .WIDTH       (WIDTH),
-        .Q           (Q)
-    ) mul1 (
-        .clk   (clk),
-        .reset (reset),
-        .start (start),
-        .a     (B),
-        .w     (W),
-        .result(modulo_ct),
-        .done  (mul_done)
-    );
+        end else begin : g_gs
+            // -------------- Gentleman-Sande (INTT) --------------
+            //   U = (A + B)/2 mod q
+            //   V = (A - B) * W_inv mod q   (W_inv has the 1/2 folded in)
+            wire [WIDTH - 1 : 0] gs_add;
+            wire [WIDTH - 1 : 0] gs_sub;
+            wire [WIDTH : 0]     gs_add_q;
 
-    mod_add #(
-        .WIDTH       (WIDTH),
-        .Q           (Q)
-    ) add1 (
-        .a     (A),
-        .b     (modulo_ct),
-        .result(reg_u_ct)
-    );
+            mod_add #(.WIDTH(WIDTH), .Q(Q)) add (.a(A), .b(B), .result(gs_add));
+            mod_sub #(.WIDTH(WIDTH), .Q(Q)) sub (.a(A), .b(B), .result(gs_sub));
 
-    mod_sub #(
-        .WIDTH       (WIDTH),
-        .Q           (Q)
-    ) sub1 (
-        .a     (A),
-        .b     (modulo_ct),
-        .result(reg_v_ct)
-    );
+            mod_mult #(.WIDTH(WIDTH), .Q(Q)) mul (
+                .clk   (clk),
+                .reset (reset),
+                .start (start),
+                .a     (gs_sub),
+                .w     (W_inv),
+                .result(v_next),
+                .done  (mul_done)
+            );
 
-//  using Gentleman-Sande (GS)
-//   U = (A + B) mod q
-//   V = (A - B) * W_inv mod q
-
-    mod_add #(
-        .WIDTH       (WIDTH),
-        .Q           (Q)
-    ) add2 (
-        .a     (A),
-        .b     (B),
-        .result(gs_add)
-    );
-
-    mod_sub #(
-        .WIDTH       (WIDTH),
-        .Q           (Q)
-    ) sub2 (
-        .a     (A),
-        .b     (B),
-        .result(gs_sub)
-    );
-
-    // mod_mult #(
-    //     .WIDTH       (WIDTH)
-    // ) mul2 (
-    //     .clk   (clk),
-    //     .reset (reset),
-    //     .start (start),
-    //     .a     (gs_add),
-    //     .w     (W_inv),
-    //     .q     (q),
-    //     .result(reg_u_gs),
-    //     .done  ()
-    // );
-    mod_mult #(
-        .WIDTH       (WIDTH),
-        .Q           (Q)
-    ) mul3 (
-        .clk   (clk),
-        .reset (reset),
-        .start (start),
-        .a     (gs_sub),
-        .w     (W_inv),
-        .result(reg_v_gs),
-        .done  ()
-    );
-    
-    wire [WIDTH:0] gs_add_q = gs_add + Q;
+            // x/2 mod q: if x is odd, add q (odd) first, then shift
+            assign gs_add_q = gs_add + Q;
+            assign u_next   = gs_add[0] ? gs_add_q[WIDTH:1] : (gs_add >> 1);
+        end
+    endgenerate
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             U    <= {WIDTH{1'b0}};
             V    <= {WIDTH{1'b0}};
             done <= 1'b0;
-        end
-        else begin
-            done <= mul_done;         
+        end else begin
+            done <= mul_done;
             if (mul_done) begin
-                if (op == 1'b0) begin  // INTT
-                    U <= gs_add[0] ? gs_add_q[WIDTH:1] : (gs_add >> 1);
-                    V <= reg_v_gs;
-                end
-                else begin             // NTT
-                    U <= reg_u_ct;
-                    V <= reg_v_ct;
-                end
+                U <= u_next;
+                V <= v_next;
             end
         end
     end

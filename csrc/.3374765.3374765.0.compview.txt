@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1793894464.330044499, "rt":0.46, "ut":0.14, "st":0.10}}
+{"vcselab":{"timestamp_begin":1793894464.849964601, "rt":0.44, "ut":0.15, "st":0.05}}
+{"link":{"timestamp_begin":1793894465.329932034, "rt":0.10, "ut":0.06, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1793894464.123597956}
+{"VCS_COMP_START_TIME": 1793894464.123597956}
+{"VCS_COMP_END_TIME": 1793894465.479678656}
+{"VCS_USER_OPTIONS": "-full64 -sverilog package.sv polynomial_mul.v -o simv"}
+{"vcs1": {"peak_mem": 333696}}
+{"vcselab": {"peak_mem": 191096}}
