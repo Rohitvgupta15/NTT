@@ -28,10 +28,10 @@ simv
 package.sv
 polynomial_mul.v
 64
-XDG_SESSION_ID=42560
+XDG_SESSION_ID=42733
 XDG_RUNTIME_DIR=/run/user/1138
-VSCODE_NONCE=ceb86ed7-2f24-4c13-811e-03a5f3c65536
-VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-ab4d0b77-ac49-4eb6-9a15-bc8a31a8310c.sock
+VSCODE_NONCE=e0f939bd-4f88-48fd-b258-9edd008b3da3
+VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-20db4b4b-365c-4c35-8b40-6a0bd490be27.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1138/vscode-git-3af6a11134.sock
 VSCODE_GIT_ASKPASS_NODE=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/node
 VSCODE_GIT_ASKPASS_MAIN=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/extensions/git/dist/askpass-main.js
@@ -58,13 +58,13 @@ TERM_PROGRAM=vscode
 S_COLORS=auto
 SYN_MAN_DIR=/usr/cad/synopsys/vcs/2025.06//doc/man
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
-SSH_CONNECTION=192.168.101.54 55803 140.116.245.89 22
-SSH_CLIENT=192.168.101.54 55803 22
+SSH_CONNECTION=192.168.101.54 62391 140.116.245.89 22
+SSH_CLIENT=192.168.101.54 62391 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/usr/cad/synopsys/vcs/2025.06//linux64/bin/Python3/bin/python3
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2025.06//linux64/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
-SHLIB_PATH=/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/:
+SHLIB_PATH=/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/::/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/:
 SELINUX_USE_CURRENT_RANGE=
 SELINUX_ROLE_REQUESTED=
 SELINUX_LEVEL_REQUESTED=
@@ -78,8 +78,8 @@ MODULESHOME=/usr/share/Modules
 MODULEPATH_modshare=/usr/share/modulefiles:1:/usr/share/Modules/modulefiles:1:/etc/modulefiles:1
 MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MFLAGS=
-MAKE_TERMOUT=/dev/pts/39
-MAKE_TERMERR=/dev/pts/39
+MAKE_TERMOUT=/dev/pts/28
+MAKE_TERMERR=/dev/pts/28
 MAKELEVEL=1
 MAKEFLAGS=
 LOADEDMODULES=
@@ -91,23 +91,23 @@ GIT_ASKPASS=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1138/bus
 COPILOT_DEBUG_NONCE=a45d7c673ea321127dab96051a03766e
 COLORTERM=truecolor
-CLAUDE_CODE_SSE_PORT=29595
+CLAUDE_CODE_SSE_PORT=63039
 0
 0
 9
-1793954597 butterfly_unit.v
-1793718497 modular_integer.v
-1793903596 modular_reduction.v
-1793868068 modular_multiplier.v
-1793868068 modular_subtractor.v
-1793868068 modular_adder.v
+1793959294 butterfly_unit.v
+1793959233 modular_integer.v
+1793959433 modular_reduction.v
+1793959604 modular_multiplier.v
+1793959428 modular_subtractor.v
+1793959421 modular_adder.v
 1748765798 /usr/cad/synopsys/vcs/2025.06/linux64/packages/snps_msv_nettype_pkg/AN.DB
-1793958666 polynomial_mul.v
+1793977411 polynomial_mul.v
 1793727210 package.sv
 4
 1748749132 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvirsim.so
 1748748097 /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so
 1748748087 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so
 1748748085 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
-1793958670 simv.daidir
+1793977421 simv.daidir
 -1 partitionlib

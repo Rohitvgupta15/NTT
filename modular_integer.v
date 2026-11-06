@@ -2,8 +2,8 @@
 // Multiplier Module (2-Cycle Pipeline Latency)
 // ============================================================
 module mult_int #(
-    parameter WIDTH       = 32,
-    parameter CHUNK_WIDTH = 16,
+    parameter WIDTH       = 12,
+    parameter CHUNK_WIDTH = 6,
     parameter NUM_CHUNKS  = WIDTH / CHUNK_WIDTH,
     parameter PROD_WIDTH  = 2 * WIDTH
 )(

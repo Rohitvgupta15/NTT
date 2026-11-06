@@ -4,8 +4,8 @@
 //   Q is a compile-time parameter; Q' is computed at elaboration.
 // ============================================================
 module mod_red #(
-    parameter WIDTH = 32,                    // Bit-width (R = 2^WIDTH)
-    parameter [WIDTH-1:0] Q = 32'd7681       // Modulus Q (odd prime)
+    parameter WIDTH = 12,                    // Bit-width (R = 2^WIDTH)
+    parameter [WIDTH-1:0] Q = 32'd3329       // Modulus Q (odd prime)
 )(
     input  wire                 clk,
     input  wire                 reset,

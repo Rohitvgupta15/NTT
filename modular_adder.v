@@ -1,7 +1,7 @@
 module mod_add
 #(
-    parameter WIDTH = 32,
-    parameter [WIDTH-1:0] Q = 32'd7681   // Modulus Q (odd prime)
+    parameter WIDTH = 12,
+    parameter [WIDTH-1:0] Q = 32'd3329   // Modulus Q (odd prime)
 )
 (
     input  wire [WIDTH-1:0] a,

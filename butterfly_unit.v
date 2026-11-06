@@ -1,6 +1,6 @@
 module BFU #(
-    parameter WIDTH = 32,
-    parameter [WIDTH-1:0] Q = 32'd7681,  // Modulus Q (odd prime)
+    parameter WIDTH = 12,
+    parameter [WIDTH-1:0] Q = 32'd3329,  // Modulus Q (odd prime)
     // Butterfly type (fixed at elaboration, only that datapath is built):
     //   1 = NTT  (Cooley-Tukey):     U = A + W*B,      V = A - W*B
     //   0 = INTT (Gentleman-Sande):  U = (A + B)/2,    V = (A - B)*W_inv

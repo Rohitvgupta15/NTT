@@ -2,7 +2,7 @@
 // Top-Level Modular Multiplier
 // ============================================================
 module mod_mult #(
-    parameter WIDTH = 32,
+    parameter WIDTH = 12,
     parameter [WIDTH-1:0] Q = 32'd7681   // Modulus Q (odd prime)
 )(
     input  wire                 clk,
@@ -27,7 +27,7 @@ module mod_mult #(
 
     mult_int #(
         .WIDTH       (WIDTH),
-        .CHUNK_WIDTH (16)
+        .CHUNK_WIDTH (6)
     ) m1 (
         .clk   (clk),
         .reset (reset),
