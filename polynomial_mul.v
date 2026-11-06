@@ -17,12 +17,12 @@ module polynomial_mul #(
     localparam [WIDTH-1:0] W3  = 32'd4083;  // NTT stage 2, pair (2,3)
     localparam [WIDTH-1:0] WI2 = 32'd1799;  // INTT stage 1, pair (0,1)
     localparam [WIDTH-1:0] WI3 = 32'd5016;  // INTT stage 1, pair (2,3)
-    localparam [WIDTH-1:0] WI1 = 32'd783;   // INTT stage 2
+    localparam [WIDTH-1:0] WI1 = 32'd5400;// 32'd783;   // INTT stage 2
 
     // R^2 mod Q (R = 2^WIDTH): mont(x, R2) = x*R mod Q
     // Used to restore the R factor lost in the pointwise Montgomery multiply,
     // so b can be fed in plain form.
-    localparam [WIDTH-1:0] R2 = {1'b1, {(2*WIDTH){1'b0}}} % Q;
+    
 
     // NTT stage 1 outputs
     wire [WIDTH-1:0] a1_0, a1_1, a1_2, a1_3;
@@ -37,7 +37,7 @@ module polynomial_mul #(
     wire [WIDTH-1:0] i1_0, i1_1, i1_2, i1_3;
 
     wire n1_done, n2_done, pw1_done, pw2_done, i1_done, i2_done;
-
+    
     // ================= NTT stage 1 (stride 2) =================
     BFU #(.WIDTH(WIDTH), .Q(Q), .OP(1)) n1_a0 (.clk(clk), .reset(reset), .A(a0), .B(a2), .W(W1), .W_inv(32'd0), .start(start), .U(a1_0), .V(a1_2), .done(n1_done));
     BFU #(.WIDTH(WIDTH), .Q(Q), .OP(1)) n1_a1 (.clk(clk), .reset(reset), .A(a1), .B(a3), .W(W1), .W_inv(32'd0), .start(start), .U(a1_1), .V(a1_3), .done());
@@ -59,18 +59,13 @@ module polynomial_mul #(
     mod_mult #(.WIDTH(WIDTH), .Q(Q)) pw1_2 (.clk(clk), .reset(reset), .start(n2_done), .a(a2_2), .w(b2_2), .result(p1_2), .done());
     mod_mult #(.WIDTH(WIDTH), .Q(Q)) pw1_3 (.clk(clk), .reset(reset), .start(n2_done), .a(a2_3), .w(b2_3), .result(p1_3), .done());
 
-    mod_mult #(.WIDTH(WIDTH), .Q(Q)) pw2_0 (.clk(clk), .reset(reset), .start(pw1_done), .a(p1_0), .w(R2), .result(p2_0), .done(pw2_done));
-    mod_mult #(.WIDTH(WIDTH), .Q(Q)) pw2_1 (.clk(clk), .reset(reset), .start(pw1_done), .a(p1_1), .w(R2), .result(p2_1), .done());
-    mod_mult #(.WIDTH(WIDTH), .Q(Q)) pw2_2 (.clk(clk), .reset(reset), .start(pw1_done), .a(p1_2), .w(R2), .result(p2_2), .done());
-    mod_mult #(.WIDTH(WIDTH), .Q(Q)) pw2_3 (.clk(clk), .reset(reset), .start(pw1_done), .a(p1_3), .w(R2), .result(p2_3), .done());
-
     // ================= INTT stage 1 (stride 1) =================
-    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(0)) i1_a (.clk(clk), .reset(reset), .A(p2_0), .B(p2_1), .W(32'd0), .W_inv(WI2), .start(pw2_done), .U(i1_0), .V(i1_1), .done(i1_done));
-    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(0)) i1_b (.clk(clk), .reset(reset), .A(p2_2), .B(p2_3), .W(32'd0), .W_inv(WI3), .start(pw2_done), .U(i1_2), .V(i1_3), .done());
+    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(0)) i1_a (.clk(clk), .reset(reset), .A(p1_0), .B(p1_1), .W(32'd0), .W_inv(WI2), .start(pw1_done), .U(i1_0), .V(i1_1), .done(i1_done));
+    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(0)) i1_b (.clk(clk), .reset(reset), .A(p1_2), .B(p1_3), .W(32'd0), .W_inv(WI3), .start(pw1_done), .U(i1_2), .V(i1_3), .done());
 
     // ================= INTT stage 2 (stride 2) =================
-    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(0)) i2_a (.clk(clk), .reset(reset), .A(i1_0), .B(i1_2), .W(32'd0), .W_inv(WI1), .start(i1_done), .U(c0), .V(c2), .done(i2_done));
-    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(0)) i2_b (.clk(clk), .reset(reset), .A(i1_1), .B(i1_3), .W(32'd0), .W_inv(WI1), .start(i1_done), .U(c1), .V(c3), .done());
+    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(2)) i2_a (.clk(clk), .reset(reset), .A(i1_0), .B(i1_2), .W(32'd0), .W_inv(WI1), .start(i1_done), .U(c0), .V(c2), .done(i2_done));
+    BFU #(.WIDTH(WIDTH), .Q(Q), .OP(2)) i2_b (.clk(clk), .reset(reset), .A(i1_1), .B(i1_3), .W(32'd0), .W_inv(WI1), .start(i1_done), .U(c1), .V(c3), .done());
 
     assign done = i2_done;
 

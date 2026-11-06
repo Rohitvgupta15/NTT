@@ -4,6 +4,7 @@ module BFU #(
     // Butterfly type (fixed at elaboration, only that datapath is built):
     //   1 = NTT  (Cooley-Tukey):     U = A + W*B,      V = A - W*B
     //   0 = INTT (Gentleman-Sande):  U = (A + B)/2,    V = (A - B)*W_inv
+
     parameter OP = 1
 ) (
     input                      clk,
@@ -22,6 +23,9 @@ module BFU #(
     wire [WIDTH - 1 : 0] u_next;
     wire [WIDTH - 1 : 0] v_next;
     wire                 mul_done;
+
+    localparam [2*WIDTH-1:0] R2_64 = {1'b1, {(2*WIDTH){1'b0}}} % Q;   // R^2 mod Q
+    localparam [WIDTH-1:0]   KU    = (((Q + 1) >> 1) * R2_64) % Q;    // (Q+1)/2 = 2^-1 mod Q
 
     generate
         if (OP == 1) begin : g_ct
@@ -47,9 +51,10 @@ module BFU #(
             // -------------- Gentleman-Sande (INTT) --------------
             //   U = (A + B)/2 mod q
             //   V = (A - B) * W_inv mod q   (W_inv has the 1/2 folded in)
+            
             wire [WIDTH - 1 : 0] gs_add;
             wire [WIDTH - 1 : 0] gs_sub;
-            wire [WIDTH : 0]     gs_add_q;
+            wire [WIDTH     : 0] gs_add_q;
 
             mod_add #(.WIDTH(WIDTH), .Q(Q)) add (.a(A), .b(B), .result(gs_add));
             mod_sub #(.WIDTH(WIDTH), .Q(Q)) sub (.a(A), .b(B), .result(gs_sub));
@@ -63,10 +68,24 @@ module BFU #(
                 .result(v_next),
                 .done  (mul_done)
             );
-
-            // x/2 mod q: if x is odd, add q (odd) first, then shift
-            assign gs_add_q = gs_add + Q;
-            assign u_next   = gs_add[0] ? gs_add_q[WIDTH:1] : (gs_add >> 1);
+            
+            if (OP == 0) begin : g_gs 
+                    // x/2 mod q: if x is odd, add q (odd) first, then shift
+                assign gs_add_q = gs_add + Q;
+                assign u_next   = gs_add[0] ? gs_add_q[WIDTH:1] : (gs_add >> 1);
+            end
+            else if (OP == 2) begin : g_ct
+                    mod_mult #(.WIDTH(WIDTH), .Q(Q)) mul2 (
+                        .clk   (clk),
+                        .reset (reset),
+                        .start (start),
+                        .a     (gs_add),
+                        .w     (KU),
+                        .result(u_next),
+                        .done  ()
+                    );
+                end
+            
         end
     endgenerate
 
