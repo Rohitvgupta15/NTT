@@ -1,5 +1,0 @@
-{"vcs1":{"timestamp_begin":1793996542.769082440, "rt":19.85, "ut":0.04, "st":0.04}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1793996542.524323082}
-{"VCS_COMP_START_TIME": 1793996542.524323082}
-{"VCS_COMP_END_TIME": 1793996562.663642992}
-{"VCS_USER_OPTIONS": "-full64 -sverilog package.sv ntt_256point.v tb_ntt_256point.v -o simv_ntt256"}
