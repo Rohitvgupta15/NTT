@@ -11,7 +11,7 @@ module ntt_256point #(
 );
 
     localparam N           = 256;
-    localparam NUM_STAGE   = $clog2(N) - 1; // 7 stages for N=256
+    localparam NUM_STAGE   = $clog2(N) - 1; // 0 to 7 stages for N=256
     localparam BFU_LATENCY = 4; // BFU computation latency
 
     localparam [WIDTH-1:0] twiddle_rom [0:127] = '{
