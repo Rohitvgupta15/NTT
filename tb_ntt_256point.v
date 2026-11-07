@@ -55,25 +55,25 @@ module tb_ntt_256point;
             end
         end
     endtask
-    // Measure BFU latency (start -> done) and total NTT time
-time t_bfu_start, t_ntt_start;
-integer bfu_count = 0;
+//     // Measure BFU latency (start -> done) and total NTT time
+// time t_bfu_start, t_ntt_start;
+// integer bfu_count = 0;
 
-always @(posedge clk) begin
-    if (uut.bfu_start)
-        t_bfu_start = $time;
-    if (uut.bfu_done) begin
-        if (bfu_count == 0)
-            $display("BFU latency = %0t ns = %0d cycles",
-                     $time - t_bfu_start, ($time - t_bfu_start) / 10);
-        bfu_count = bfu_count + 1;
-    end
-end
+// always @(posedge clk) begin
+//     if (uut.bfu_start)
+//         t_bfu_start = $time;
+//     if (uut.bfu_done) begin
+//         if (bfu_count == 0)
+//             $display("BFU latency = %0t ns = %0d cycles",
+//                      $time - t_bfu_start, ($time - t_bfu_start) / 10);
+//         bfu_count = bfu_count + 1;
+//     end
+// end
 
-always @(posedge start) t_ntt_start = $time;
-always @(posedge done)
-    $display("NTT total = %0t ns = %0d cycles, %0d butterflies",
-             $time - t_ntt_start, ($time - t_ntt_start) / 10, bfu_count);
+// always @(posedge start) t_ntt_start = $time;
+// always @(posedge done)
+//     $display("NTT total = %0t ns = %0d cycles, %0d butterflies",
+//              $time - t_ntt_start, ($time - t_ntt_start) / 10, bfu_count);
 
     initial begin
         $readmemh("ntt256_input.hex",  in_vec);

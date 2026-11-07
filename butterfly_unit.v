@@ -34,6 +34,21 @@ module BFU #(
             //   V = A - W*B mod q
             wire [WIDTH - 1 : 0] wb;
 
+            // Delay A by the mod_mult latency (3 cycles) so it lines up with wb.
+            // Needed when a new butterfly is issued every cycle (pipelined use).
+            reg [WIDTH - 1 : 0] a_d1, a_d2, a_d3;
+            always @(posedge clk or posedge reset) begin
+                if (reset) begin
+                    a_d1 <= {WIDTH{1'b0}};
+                    a_d2 <= {WIDTH{1'b0}};
+                    a_d3 <= {WIDTH{1'b0}};
+                end else begin
+                    a_d1 <= A;
+                    a_d2 <= a_d1;
+                    a_d3 <= a_d2;
+                end
+            end
+
             mod_mult #(.WIDTH(WIDTH), .Q(Q)) mul (
                 .clk   (clk),
                 .reset (reset),
@@ -44,8 +59,8 @@ module BFU #(
                 .done  (mul_done)
             );
 
-            mod_add #(.WIDTH(WIDTH), .Q(Q)) add (.a(A), .b(wb), .result(u_next));
-            mod_sub #(.WIDTH(WIDTH), .Q(Q)) sub (.a(A), .b(wb), .result(v_next));
+            mod_add #(.WIDTH(WIDTH), .Q(Q)) add (.a(a_d3), .b(wb), .result(u_next));
+            mod_sub #(.WIDTH(WIDTH), .Q(Q)) sub (.a(a_d3), .b(wb), .result(v_next));
 
         end else begin : g_gs
             // -------------- Gentleman-Sande (INTT) --------------

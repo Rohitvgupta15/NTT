@@ -1,0 +1,116 @@
+0
+28
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/usr/cad/synopsys/vcs/2025.06/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
+-Mout=simv_ntt256
+-Msaverestoreobj=/usr/cad/synopsys/vcs/2025.06/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/2025.06/include
+-Mxllcflags=
+-Xhdlxmropt
+-full64
+-gen_obj
+-o simv_ntt256
+-picarchive
+-sverilog
+/usr/cad/synopsys/vcs/2025.06/linux64/bin/vcs1fe
+simv_ntt256
+package.sv
+ntt_256pipelined.v
+tb_ntt_256point.v
+64
+XDG_SESSION_ID=42882
+XDG_RUNTIME_DIR=/run/user/1138
+VSCODE_NONCE=919dd4ad-4de7-4105-a488-c7fd5b700413
+VSCODE_IPC_HOOK_CLI=/run/user/1138/vscode-ipc-ee558e63-02b8-43c3-879b-c61d323c5b7c.sock
+VSCODE_GIT_IPC_HANDLE=/run/user/1138/vscode-git-3af6a11134.sock
+VSCODE_GIT_ASKPASS_NODE=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/node
+VSCODE_GIT_ASKPASS_MAIN=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+VMR_MODE_FLAG=64
+VERDI_HOME=/usr/cad/synopsys/verdi/2025.06/
+VENDOR=unknown
+VCS_STATIC_HOME=/usr/cad/synopsys/vcs/2025.06//vcfca
+VCS_PYTHON3=/usr/cad/synopsys/vcs/2025.06//linux64/bin/Python3/bin/python3
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_INTERNAL_CONVERTEDLIBS=
+VCS_HOME=/usr/cad/synopsys/vcs/2025.06/
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_CC=gcc
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+UNAME=/bin/uname
+TOOL_HOME=/usr/cad/synopsys/vcs/2025.06/linux64
+TERM_PROGRAM_VERSION=1.145.0
+TERM_PROGRAM=vscode
+S_COLORS=auto
+SYN_MAN_DIR=/usr/cad/synopsys/vcs/2025.06//doc/man
+SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
+SSH_CONNECTION=192.168.101.54 63466 140.116.245.89 22
+SSH_CLIENT=192.168.101.54 63466 22
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPS_VCS_PYTHON3=/usr/cad/synopsys/vcs/2025.06//linux64/bin/Python3/bin/python3
+SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2025.06//linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SHLIB_PATH=/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/:
+SELINUX_USE_CURRENT_RANGE=
+SELINUX_ROLE_REQUESTED=
+SELINUX_LEVEL_REQUESTED=
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+OVA_UUM=0
+OSTYPE=linux
+MODULES_USE_COMPAT_VERSION=0
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+MODULESHOME=/usr/share/Modules
+MODULEPATH_modshare=/usr/share/modulefiles:1:/usr/share/Modules/modulefiles:1:/etc/modulefiles:1
+MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+MFLAGS=
+MAKE_TERMOUT=/dev/pts/43
+MAKE_TERMERR=/dev/pts/43
+MAKELEVEL=1
+MAKEFLAGS=
+LOADEDMODULES=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+HOSTTYPE=x86_64-linux
+GROUP=lab
+GIT_ASKPASS=/home/rohit/.vscode-server/cli/servers/Stable-a717861c07586a53d83b80d742cd3f59b20a6273/server/extensions/git/dist/askpass.sh
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1138/bus
+COPILOT_DEBUG_NONCE=a45d7c673ea321127dab96051a03766e
+COLORTERM=truecolor
+CLAUDE_CODE_SSE_PORT=37361
+0
+0
+11
+1794068813 address_generator.v
+1794072667 butterfly_unit.v
+1794069906 modular_integer.v
+1793959433 modular_reduction.v
+1793959604 modular_multiplier.v
+1793959428 modular_subtractor.v
+1793959421 modular_adder.v
+1748765798 /usr/cad/synopsys/vcs/2025.06/linux64/packages/snps_msv_nettype_pkg/AN.DB
+1794072468 tb_ntt_256point.v
+1794074671 ntt_256pipelined.v
+1794067545 package.sv
+4
+1748749132 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvirsim.so
+1748748097 /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so
+1748748087 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so
+1748748085 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
+1794074674 simv_ntt256.daidir
+-1 partitionlib

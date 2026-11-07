@@ -11,3 +11,6 @@ sram :
 
 ntt256 :
 	vcs -full64 -sverilog package.sv ntt_256point.v tb_ntt_256point.v -o simv_ntt256 && ./simv_ntt256
+
+ntt256_pipeline :
+	vcs -full64 -sverilog package.sv ntt_256pipelined.v tb_ntt_256point.v -o simv_ntt256 && ./simv_ntt256

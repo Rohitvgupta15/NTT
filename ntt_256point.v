@@ -1,14 +1,3 @@
-// 256-point forward NTT (Kyber / ML-KEM), q = 3329
-//
-// 7 Cooley-Tukey stages (Kyber NTT stops at 128 degree-1 pairs).
-//   stage s = 1..7 :  len = 128 >> (s-1),  groups = 2^(s-1)
-//   group g pairs a[j] with a[j+len] for j in [g*2*len, g*2*len+len)
-//   and uses twiddle W[2^(s-1) + g]
-//   BFU (OP=1):  U = A + W*B,  V = A - W*B   (mod q)
-//
-// Twiddles: W[i] = 17^bitrev7(i) * 2^12 mod q  (Montgomery form, R = 2^12,
-// matching mod_mult which computes a*w*2^-12 mod q -> plain a*zeta).
-// Input and output are in natural Kyber order (coefficient i at in[i*WIDTH +: WIDTH]).
 
 module ntt_256point #(
     parameter WIDTH = 12,
@@ -112,8 +101,9 @@ module ntt_256point #(
                 IDLE: begin
                     done <= 0;
                     if (start) begin
-                        for (i = 0; i < N; i = i + 1)
+                        for (i = 0; i < N; i = i + 1) begin
                             mem[i] <= in[i*WIDTH +: WIDTH];
+                        end
                         stage    <= 0;
                         pair_cnt <= 0;
                         state    <= READ;
