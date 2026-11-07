@@ -2,7 +2,7 @@ rtl_4 :
 	vcs -full64 -sverilog  package.sv ntt_4point.v  -o simv  && ./simv
 
 clean : 
-	  rm -rf *.vcd *.log simv *.key csrc simv.daidir
+	  rm -rf *.vcd *.log simv *.key csrc *.daidir
 
 rtl_2 :
 	vcs -full64 -sverilog  package.sv ntt_2point.v  -o simv  && ./simv
