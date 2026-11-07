@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1793996296.165291071, "rt":1.25, "ut":0.87, "st":0.12}}
+{"vcselab":{"timestamp_begin":1793996297.474901395, "rt":0.52, "ut":0.23, "st":0.08}}
+{"link":{"timestamp_begin":1793996298.037574194, "rt":0.12, "ut":0.08, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1793996295.933099983}
+{"VCS_COMP_START_TIME": 1793996295.933099983}
+{"VCS_COMP_END_TIME": 1793996298.210875508}
+{"VCS_USER_OPTIONS": "-full64 -sverilog package.sv ntt_256point.v tb_ntt_256point.v -o simv_ntt256"}
+{"vcs1": {"peak_mem": 346232}}
+{"vcselab": {"peak_mem": 199068}}

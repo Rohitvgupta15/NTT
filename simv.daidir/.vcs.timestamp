@@ -26,7 +26,7 @@
 /usr/cad/synopsys/vcs/2025.06/linux64/bin/vcs1fe
 simv
 package.sv
-polynomial_mul.v
+ntt_4point.v
 64
 XDG_SESSION_ID=42733
 XDG_RUNTIME_DIR=/run/user/1138
@@ -64,7 +64,7 @@ SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/usr/cad/synopsys/vcs/2025.06//linux64/bin/Python3/bin/python3
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2025.06//linux64/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
-SHLIB_PATH=/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/::/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/:
+SHLIB_PATH=/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/::/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/::/usr/cad/synopsys/verdi/2025.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2025.06//share/PLI/VCS/LINUX64/:
 SELINUX_USE_CURRENT_RANGE=
 SELINUX_ROLE_REQUESTED=
 SELINUX_LEVEL_REQUESTED=
@@ -102,12 +102,12 @@ CLAUDE_CODE_SSE_PORT=63039
 1793959428 modular_subtractor.v
 1793959421 modular_adder.v
 1748765798 /usr/cad/synopsys/vcs/2025.06/linux64/packages/snps_msv_nettype_pkg/AN.DB
-1793977411 polynomial_mul.v
+1793977411 ntt_4point.v
 1793727210 package.sv
 4
 1748749132 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvirsim.so
 1748748097 /usr/cad/synopsys/vcs/2025.06/linux64/lib/liberrorinf.so
 1748748087 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libsnpsmalloc.so
 1748748085 /usr/cad/synopsys/vcs/2025.06/linux64/lib/libvfs.so
-1793977421 simv.daidir
+1793996563 simv.daidir
 -1 partitionlib
